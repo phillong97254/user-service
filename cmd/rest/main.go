@@ -5,6 +5,7 @@ package main
 import (
 	"context"
 	"errors"
+	"github.com/phillong97254/go-lib/database"
 	"log"
 	"log/slog"
 	"net/http"
@@ -19,6 +20,7 @@ import (
 	v1 "github.com/phillong97254/user-service/internal/handler/rest/v1"
 	"github.com/phillong97254/user-service/internal/repository"
 	"github.com/phillong97254/user-service/internal/service/profile"
+	"github.com/phillong97254/user-service/migration"
 )
 
 func main() {
@@ -35,8 +37,26 @@ func main() {
 	// Authorize: verify JWT bằng JWKS của auth-service
 	verifier := auth.NewVerifier(cfg.OAuth.JWKSURL, cfg.OAuth.Issuer, cfg.OAuth.Audience)
 
+	// Init Database (+ migration)
+	db, err := database.New(database.Config{
+		URL:                   cfg.DB.URL,
+		MaxOpenConnections:    cfg.DB.MaxOpenConnections,
+		MaxIdleConnections:    cfg.DB.MaxIdleConnections,
+		ConnectionMaxLifetime: cfg.DB.ConnectionMaxLifetime,
+		ConnectionMaxIdleTime: cfg.DB.ConnectionMaxIdleTime,
+		LogSQL:                cfg.DB.LogSQL,
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	if cfg.DB.AutoMigrate {
+		if err := database.Migrate(cfg.DB.URL, migration.FS, migration.Dir); err != nil {
+			log.Fatal(err)
+		}
+	}
+
 	// Repository -> Service -> Handler
-	repo := repository.New()
+	repo := repository.New(db)
 	profileSvc := profile.New(logger, repo)
 	handler := v1.New(logger, profileSvc)
 

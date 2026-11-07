@@ -1,0 +1,17 @@
+name: "go-admin-wallet-user-service"
+services:
+  go-tools:
+    container_name: ${GROUP_NAME:-phillong97254}-user-service-go-tools-${ENV:-dev}
+    image: sangnv/bizgroup-go-tools:v1.26.1
+    volumes:
+      - .:/tool
+    working_dir: /tool
+    environment:
+      PROTO_GEN_CONFIG_FILE: "buf.gen.yaml"
+      DB_URL: postgres://users:${DB_PASSWORD:?đặt trong .env (xem .env.example)}@postgres:5432/user_db?sslmode=disable
+    networks:
+      - user-service-network
+
+networks:
+  user-service-network:
+    driver: bridge
