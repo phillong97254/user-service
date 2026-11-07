@@ -3,9 +3,9 @@ package user
 import (
 	"net/http"
 
-	"github.com/phil/user-service/internal/apperr"
+	"github.com/phil/go-lib/apperr"
+	auth "github.com/phil/go-lib/authkit"
 	"github.com/phil/user-service/internal/service/profile"
-	auth "github.com/phil/user-service/pkg/authkit"
 )
 
 func (i *impl) GetUser(w http.ResponseWriter, r *http.Request) {

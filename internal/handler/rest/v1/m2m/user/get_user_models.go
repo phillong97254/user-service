@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/phil/user-service/internal/apperr"
+	"github.com/phil/go-lib/apperr"
 	"github.com/phil/user-service/internal/service/profile"
 )
 

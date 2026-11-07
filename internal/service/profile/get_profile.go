@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/phil/user-service/internal/apperr"
+	"github.com/phil/go-lib/apperr"
 	profileRepo "github.com/phil/user-service/internal/repository/profile"
 )
 
