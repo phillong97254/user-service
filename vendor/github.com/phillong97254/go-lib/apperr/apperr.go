@@ -8,7 +8,7 @@ import (
 	"log/slog"
 	"net/http"
 
-	auth "github.com/phil/go-lib/authkit"
+	auth "github.com/phillong97254/go-lib/authkit"
 )
 
 type Error struct {

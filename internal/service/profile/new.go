@@ -3,7 +3,7 @@ package profile
 import (
 	"log/slog"
 
-	"github.com/phil/user-service/internal/repository"
+	"github.com/phillong97254/user-service/internal/repository"
 )
 
 type impl struct {

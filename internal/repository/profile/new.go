@@ -1,6 +1,6 @@
 package profile
 
-import "github.com/phil/user-service/internal/domain"
+import "github.com/phillong97254/user-service/internal/domain"
 
 type impl struct {
 	profiles map[string]domain.Profile

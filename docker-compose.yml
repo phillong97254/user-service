@@ -4,7 +4,7 @@ name: "go-admin-wallet-user-service"
 services:
   user-service:
     container_name: user-service-${ENV:-dev}
-    image: ${REGISTRY:-go-admin-wallet}/user-service:${TAG:-dev-latest}
+    image: ${REGISTRY:-ghcr.io/phillong97254}/user-service:${TAG:-dev-latest}
     build:
       context: .
     ports:

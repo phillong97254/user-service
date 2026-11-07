@@ -3,7 +3,7 @@ package repository
 import (
 	"sync"
 
-	"github.com/phil/user-service/internal/repository/profile"
+	"github.com/phillong97254/user-service/internal/repository/profile"
 )
 
 type impl struct {

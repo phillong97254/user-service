@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/phil/go-lib/apperr"
-	"github.com/phil/user-service/internal/service/profile"
+	"github.com/phillong97254/go-lib/apperr"
+	"github.com/phillong97254/user-service/internal/service/profile"
 )
 
 type GetUserRequest struct {

@@ -4,8 +4,8 @@ import (
 	"context"
 	"errors"
 
-	"github.com/phil/go-lib/apperr"
-	profileRepo "github.com/phil/user-service/internal/repository/profile"
+	"github.com/phillong97254/go-lib/apperr"
+	profileRepo "github.com/phillong97254/user-service/internal/repository/profile"
 )
 
 func (i *impl) GetProfile(ctx context.Context, input GetProfileInput) (GetProfileOutput, error) {

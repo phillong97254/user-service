@@ -13,12 +13,12 @@ import (
 	"syscall"
 	"time"
 
-	auth "github.com/phil/go-lib/authkit"
-	"github.com/phil/user-service/cmd/rest/routes"
-	"github.com/phil/user-service/config"
-	v1 "github.com/phil/user-service/internal/handler/rest/v1"
-	"github.com/phil/user-service/internal/repository"
-	"github.com/phil/user-service/internal/service/profile"
+	auth "github.com/phillong97254/go-lib/authkit"
+	"github.com/phillong97254/user-service/cmd/rest/routes"
+	"github.com/phillong97254/user-service/config"
+	v1 "github.com/phillong97254/user-service/internal/handler/rest/v1"
+	"github.com/phillong97254/user-service/internal/repository"
+	"github.com/phillong97254/user-service/internal/service/profile"
 )
 
 func main() {

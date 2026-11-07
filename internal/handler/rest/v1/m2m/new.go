@@ -3,8 +3,8 @@ package m2m
 import (
 	"log/slog"
 
-	"github.com/phil/user-service/internal/handler/rest/v1/m2m/user"
-	"github.com/phil/user-service/internal/service/profile"
+	"github.com/phillong97254/user-service/internal/handler/rest/v1/m2m/user"
+	"github.com/phillong97254/user-service/internal/service/profile"
 )
 
 type impl struct {

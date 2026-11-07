@@ -3,8 +3,8 @@ package routes
 import (
 	"net/http"
 
-	auth "github.com/phil/go-lib/authkit"
-	v1 "github.com/phil/user-service/internal/handler/rest/v1"
+	auth "github.com/phillong97254/go-lib/authkit"
+	v1 "github.com/phillong97254/user-service/internal/handler/rest/v1"
 )
 
 // Backoffice gọi các endpoint này bằng token của CHÍNH backoffice (client_credentials), cần scope users:read.
